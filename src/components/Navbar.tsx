@@ -6,6 +6,7 @@ import {
   navMenu,
   navMenuLeft,
   navMenuRight,
+  navLogoImage,
 } from './NavStyle'
 import Menu from './Menu'
 import Image from 'next/image'
@@ -25,7 +26,7 @@ const Navbar = () => {
       <div className={navMenu}>
         {/* LEFT */}
         <div className={navMenuLeft}>
-          <Link href='/'>
+          <Link href='/' className={navLogoImage}>
             <Image src='/logo.png' alt='' width={24} height={24} />
             <div className={navLogo}>NOISHOP</div>
           </Link>
