@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { navMenu } from './NavStyle'
 
 const Menu = () => {
   const [open, setOpen] = useState(false)
@@ -17,7 +18,7 @@ const Menu = () => {
         onClick={() => setOpen((prev) => !prev)}
       />
       {open && (
-        <div className=''>
+        <div className={navMenu}>
           <Link href='/'>Homepage</Link>
           <Link href='/'>Shop</Link>
           <Link href='/'>Deals</Link>

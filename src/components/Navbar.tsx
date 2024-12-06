@@ -1,12 +1,16 @@
 import Link from 'next/link'
-import { logo } from './NavStyle'
+import { navLogo, navMain, navSize } from './NavStyle'
 import Menu from './Menu'
 const Navbar = () => {
   return (
-    <div className={logo}>
-      {/* MOBILE */}
-      <Link href={'/'}>NoiShop</Link>
-      <Menu />
+    <div className={navSize}>
+      <div className={navMain}>
+        {/* MOBILE */}
+        <Link href={'/'} className={navLogo}>
+          NOISHOP
+        </Link>
+        <Menu />
+      </div>
     </div>
   )
 }
