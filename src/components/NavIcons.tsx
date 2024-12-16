@@ -2,17 +2,35 @@
 
 import Image from 'next/image'
 import {
+  logout,
   navbarIconCart,
   navbarIconNotification,
   navbarIconProfile,
   navbarIcons,
+  profileMenu,
 } from './NavStyle'
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const NavIcons = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
+
+  const router = useRouter()
+
+  // TEMPORARY
+  // create isLoggedIn for temporary use only because we don't have the authentication yet
+  const isLoggedIn = false
+
+  const handleProfile = () => {
+    if (!isLoggedIn) {
+      // if user is not login -- redirect to the loging page
+      router.push('/login')
+    }
+    // if user login -- redirect to profile
+    setIsProfileOpen((prev) => !prev)
+  }
   return (
     <div className={navbarIcons}>
       <Image
@@ -21,11 +39,12 @@ const NavIcons = () => {
         width={22}
         height={22}
         className={navbarIconProfile}
+        onClick={handleProfile}
       />
       {isProfileOpen && (
-        <div className=''>
+        <div className={profileMenu}>
           <Link href='/'>Profile</Link>
-          <div className='logout'></div>
+          <div className={logout}>Logout</div>
         </div>
       )}
       <Image

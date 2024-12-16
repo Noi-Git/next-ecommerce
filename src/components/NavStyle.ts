@@ -11,8 +11,10 @@ export const navMainRight = 'w-2/3 flex items-center justify-between gap-8'
 export const searchBar =
   'flex items-center justify-between gap-4 bg-gray-100 p-2 rounded-md flex-1'
 export const searchBarInput = 'flex-1 outline-none px-2'
-export const navbarIcons = 'flex items-center gap-4 xl:gap-6'
+export const navbarIcons = 'flex items-center gap-4 xl:gap-6 relative '
 export const navbarIconProfile = 'cursor-pointer'
 export const navbarIconNotification = 'cursor-pointer'
 export const navbarIconCart = 'cursor-pointer'
 export const logout = 'mt-2 cursor-pointer'
+export const profileMenu =
+  'absolute p-4 rouned-md top-12 left-0 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20'
