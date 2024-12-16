@@ -4,6 +4,7 @@ import Image from 'next/image'
 import {
   logout,
   navbarIconCart,
+  navbarIconCartAmount,
   navbarIconNotification,
   navbarIconProfile,
   navbarIcons,
@@ -55,14 +56,17 @@ const NavIcons = () => {
         height={22}
         className={navbarIconNotification}
       />
-      <Image
-        src='/cart.png'
-        alt=''
-        width={22}
-        height={22}
-        className={navbarIconCart}
-        onClick={() => setIsCartOpen((prev) => !prev)}
-      />
+      <div className={navbarIconCart}>
+        <Image
+          src='/cart.png'
+          alt=''
+          width={22}
+          height={22}
+          // className={navbarIconCart}
+          onClick={() => setIsCartOpen((prev) => !prev)}
+        />
+        <div className={navbarIconCartAmount}>2</div>
+      </div>
       {isCartOpen && <CartModal />}
     </div>
   )
