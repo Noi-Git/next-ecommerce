@@ -12,6 +12,7 @@ import {
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import CartModal from './CartModal'
 
 const NavIcons = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false)
@@ -60,7 +61,9 @@ const NavIcons = () => {
         width={22}
         height={22}
         className={navbarIconCart}
+        onClick={() => setIsCartOpen((prev) => !prev)}
       />
+      {isCartOpen && <CartModal />}
     </div>
   )
 }
