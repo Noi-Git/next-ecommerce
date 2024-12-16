@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import {
   navLogo,
-  navMain,
+  navMobile,
   navMenuSize,
-  navMenu,
-  navMenuLeft,
-  navMenuRight,
+  navMain,
+  navMainLeft,
+  navMainRight,
   navLogoImage,
 } from './NavStyle'
 import Menu from './Menu'
@@ -15,7 +15,7 @@ import NavIcons from './NavIcons'
 const Navbar = () => {
   return (
     <div className={navMenuSize}>
-      <div className={navMain}>
+      <div className={navMobile}>
         {/* MOBILE */}
         <Link href={'/'}>
           <div className={navLogo}>NOISHOP</div>
@@ -23,16 +23,16 @@ const Navbar = () => {
         <Menu />
       </div>
       {/* BIGGER SCREEN */}
-      <div className={navMenu}>
+      <div className={navMain}>
         {/* LEFT */}
-        <div className={navMenuLeft}>
+        <div className={navMainLeft}>
           <Link href='/' className={navLogoImage}>
             <Image src='/logo.png' alt='' width={24} height={24} />
             <div className={navLogo}>NOI_SHOP</div>
           </Link>
         </div>
         {/* RIGHT */}
-        <div className={navMenuRight}>
+        <div className={navMainRight}>
           <SearchBar />
           <NavIcons />
         </div>
