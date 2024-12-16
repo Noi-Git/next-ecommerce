@@ -6,8 +6,10 @@ export const navMobileMenu =
   'absolute bg-black text-white left-0 top-20 w-full h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-8 text-xl z-10'
 export const navMain =
   'hidden md:flex items-center justify-between gap-8 h-full'
-export const navMainLeft = 'w-1/3'
-export const navMainRight = 'w-2/3 flex items-center justify-between gap-8'
+export const navMainLeft = 'w-1/3 xl:w-12 flex items-center gap-12'
+export const navMainLeftMenu = 'hidden xl:flex gap-4'
+export const navMainRight =
+  'w-2/3 xl:w-1/2 flex items-center justify-between gap-8'
 export const searchBar =
   'flex items-center justify-between gap-4 bg-gray-100 p-2 rounded-md flex-1'
 export const searchBarInput = 'flex-1 outline-none px-2'
