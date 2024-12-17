@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { cartModalCart, cartModalCartImage } from './NavStyle'
 
 const CartModal = () => {
-  const cartItems = false
+  const cartItems = true
   return (
     <div className={cartModalCart}>
       {!cartItems ? (
@@ -12,7 +12,7 @@ const CartModal = () => {
       ) : (
         <div className={cartModalCartImage}>
           <Image
-            src='https://www.pexels.com/photo/black-corded-headset-205926/'
+            src='https://images.pexels.com/photos/1931143/pexels-photo-1931143.jpeg?auto=compress&cs=tinysrgb&w=800'
             alt=''
             width='72'
             height='96'
