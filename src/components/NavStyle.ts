@@ -22,5 +22,6 @@ export const navbarIconCartAmount =
 export const logout = 'mt-2 cursor-pointer'
 export const profileMenu =
   'absolute p-4 rouned-md top-12 left-0 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20'
-export const cartModal =
+export const cartModalCart =
   'absolute p-4 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white top-12 right-0 flex flex-col gap-6 z-20'
+export const cartModalCartImage = 'object-cover rounded-md'
