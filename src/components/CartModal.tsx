@@ -12,7 +12,7 @@ const CartModal = () => {
       ) : (
         <div className={cartModalCartImage}>
           <Image
-            src='https://pixabay.com/illustrations/ostrich-animal-bird-nature-9261549/'
+            src='https://www.pexels.com/photo/black-corded-headset-205926/'
             alt=''
             width='72'
             height='96'
@@ -23,7 +23,7 @@ const CartModal = () => {
               {/* TITLE */}
               <div className='cartModalCartTitleTop'>
                 <h3>Product Name</h3>
-                <div className='cartModalCartPrice'></div>
+                <div className='cartModalCartPrice'>$49</div>
               </div>
               {/* DESC */}
               <div className='cartModalCartDesc'>available</div>
