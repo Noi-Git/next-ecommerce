@@ -24,6 +24,7 @@ export const profileMenu =
   'absolute p-4 rouned-md top-12 left-0 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20'
 export const cartModalCart =
   'w-max absolute p-4 rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-white top-12 right-0 flex flex-col gap-6 z-20'
+export const cartModalMainTitle = 'text-xl'
 export const cartModalWrapperTop = 'flex flex-col gap-8'
 export const cartModalCartImage = 'flex gap-4'
 export const cartModalCartInfo = 'flex flex-col justify-between w-full'
@@ -34,3 +35,10 @@ export const cartModalCartDesc = 'text-sm text-gray-500'
 export const cartModalCartBottom = 'flex justify-between test-sm'
 export const cartModalCartBottomQty = 'text-gray-500'
 export const cartModalCartBottomRemove = 'text-blue-500'
+export const cartModalSummaryDivider =
+  'flex items-center justify-between font-semibold'
+export const cartModalSummaryDesc = 'text-gray-500 text-sm mt-2 mb-4'
+export const cartModalButtonWrapper = 'flex justify-between text-sm'
+export const cartModalViewCart = 'rounded-md py-3 px-3 ring-1 ring-gray-300'
+export const cartModalCheckOut =
+  'rounded-md py-3 px-3 ring-1 bg-black text-white'
