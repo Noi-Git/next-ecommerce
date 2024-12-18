@@ -9,7 +9,7 @@ import {
   navbarIconProfile,
   navbarIcons,
   profileMenu,
-} from './NavStyle'
+} from './Styles/NavStyle'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
