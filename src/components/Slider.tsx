@@ -1,8 +1,19 @@
 'use client'
 
 import { useState } from 'react'
-import { sliderMain, sliderText, sliderWrapper } from './Styles/Slider'
+import {
+  images,
+  sliceContainer,
+  sliderButton,
+  sliderDesc,
+  sliderImage,
+  sliderMain,
+  sliderText,
+  sliderTitle,
+  sliderWrapper,
+} from './Styles/Slider'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const slides = [
   {
@@ -36,16 +47,28 @@ const Slider = () => {
     <div className={sliderMain}>
       <div className={sliderWrapper}>
         {slides.map((slide) => (
-          <div className='' key={slide.id}>
+          <div
+            className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`}
+            key={slide.id}
+          >
             {/* TEXT CONTAINER */}
             <div className={sliderText}>
-              <h2>{slide.description}</h2>
-              <h1>{slide.title}</h1>
+              <h2 className={sliderDesc}>{slide.description}</h2>
+              <h1 className={sliderTitle}>{slide.title}</h1>
               <Link href={slide.url}>
-                <button>SHOP NOW</button>
+                <button className={sliderButton}>SHOP NOW</button>
               </Link>
             </div>
             {/* IMAGE CONTAINER */}
+            <div className={sliderImage}>
+              <Image
+                src={slide.img}
+                alt=''
+                fill
+                sizes='100%'
+                className={images}
+              />
+            </div>
           </div>
         ))}
       </div>
