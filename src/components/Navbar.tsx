@@ -8,7 +8,7 @@ import {
   navMainRight,
   navLogoImage,
   navMainLeftMenu,
-} from './NavStyle'
+} from './Styles/NavStyle'
 import Menu from './Menu'
 import Image from 'next/image'
 import SearchBar from './SearchBar'
