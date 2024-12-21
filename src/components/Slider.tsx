@@ -46,14 +46,16 @@ const slides = [
 const Slider = () => {
   const [current, setCurrent] = useState(0)
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-    }, 3000)
+  //enable the setInterval during development
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+  //   }, 3000)
 
-    // need to clearInterval every time using the setInterval
-    return () => clearInterval(interval)
-  })
+  //   // need to clearInterval every time using the setInterval
+  //   return () => clearInterval(interval)
+  // })
+
   return (
     <div className={sliderMain}>
       <div
