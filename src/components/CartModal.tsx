@@ -19,7 +19,7 @@ import {
   cartModalSummaryDivider,
   cartModalViewCart,
   cartModalWrapperTop,
-} from './NavStyle'
+} from './Styles/NavStyle'
 
 const CartModal = () => {
   const cartItems = true

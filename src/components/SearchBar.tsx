@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { searchBar, searchBarInput } from './NavStyle'
+import { searchBar, searchBarInput } from './Styles/NavStyle'
 import { useRouter } from 'next/navigation'
 
 const SearchBar = () => {
