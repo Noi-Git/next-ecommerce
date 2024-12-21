@@ -81,6 +81,7 @@ const Slider = () => {
               current === index ? 'scale-150' : ''
             }`}
             key={slide.id}
+            onClick={() => setCurrent(index)}
           >
             {/* When the slice is active -- create a small circle inside the the one above */}
             {current === index && (
