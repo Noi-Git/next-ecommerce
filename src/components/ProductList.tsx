@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import {
+  featuredProductsButton,
   featuredProductsContainer,
   featuredProductsFirstImage,
   featuredProductsImageWrapper,
@@ -36,9 +37,7 @@ const ProductList = () => {
           <span className='font-semibold'>$49</span>
         </div>
         <div className='text-sm text-gray-500'>My description</div>
-        <button className='rounded-2xl ring-1 ring-salmon-color w-max text-salmon-color py-2 px-4 text-xs hover:bg-salmon-color hover:text-white'>
-          Add to Cart
-        </button>
+        <button className={featuredProductsButton}>Add to Cart</button>
       </Link>
       {/* ===== */}
       <Link href='/test' className={featuredProductsItem}>
@@ -64,9 +63,7 @@ const ProductList = () => {
           <span className='font-semibold'>$49</span>
         </div>
         <div className='text-sm text-gray-500'>My description</div>
-        <button className='rounded-2xl ring-1 ring-salmon-color w-max text-salmon-color py-2 px-4 text-xs hover:bg-salmon-color hover:text-white'>
-          Add to Cart
-        </button>
+        <button className={featuredProductsButton}>Add to Cart</button>
       </Link>
       <Link href='/test' className={featuredProductsItem}>
         <div className={featuredProductsImageWrapper}>
@@ -91,9 +88,7 @@ const ProductList = () => {
           <span className='font-semibold'>$49</span>
         </div>
         <div className='text-sm text-gray-500'>My description</div>
-        <button className='rounded-2xl ring-1 ring-salmon-color w-max text-salmon-color py-2 px-4 text-xs hover:bg-salmon-color hover:text-white'>
-          Add to Cart
-        </button>
+        <button className={featuredProductsButton}>Add to Cart</button>
       </Link>
       <Link href='/test' className={featuredProductsItem}>
         <div className={featuredProductsImageWrapper}>
@@ -118,9 +113,7 @@ const ProductList = () => {
           <span className='font-semibold'>$49</span>
         </div>
         <div className='text-sm text-gray-500'>My description</div>
-        <button className='rounded-2xl ring-1 ring-salmon-color w-max text-salmon-color py-2 px-4 text-xs hover:bg-salmon-color hover:text-white'>
-          Add to Cart
-        </button>
+        <button className={featuredProductsButton}>Add to Cart</button>
       </Link>
     </div>
   )

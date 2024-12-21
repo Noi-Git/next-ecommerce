@@ -1,0 +1,6 @@
+export const categoryListContainer = 'px-4 overflow-x-scroll scrollbar-hide'
+export const categoryListLinkWrapper = 'flex gap-4 md:gap-8'
+export const categoryListLink = 'flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w1/6'
+export const categoryListImageWrapper = 'relative bg-slate-100 w-full h-96'
+export const categoryListImage = 'object-cover'
+export const categoryName = 'mt-8 font-light text-xl tracking-wide'
