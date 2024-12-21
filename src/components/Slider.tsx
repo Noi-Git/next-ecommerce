@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   images,
   sliceContainer,
@@ -45,6 +45,15 @@ const slides = [
 ]
 const Slider = () => {
   const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+    }, 3000)
+
+    // need to clearInterval every time using the setInterval
+    return () => clearInterval(interval)
+  })
   return (
     <div className={sliderMain}>
       <div
