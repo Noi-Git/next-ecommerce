@@ -47,7 +47,10 @@ const Slider = () => {
   const [current, setCurrent] = useState(0)
   return (
     <div className={sliderMain}>
-      <div className={sliderWrapper}>
+      <div
+        className={sliderWrapper}
+        style={{ transform: `translateX(-${current * 100}vw)` }}
+      >
         {slides.map((slide) => (
           <div
             className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`}
