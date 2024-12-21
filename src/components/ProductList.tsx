@@ -1,22 +1,26 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import {
+  featuredProductsContainer,
+  featuredProductsFirstImage,
+  featuredProductsImageWrapper,
+  featuredProductsItem,
+  featuredProductsSecondImage,
+} from './Styles/ProductList'
 
 const ProductList = () => {
   return (
-    <div className='mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap'>
+    <div className={featuredProductsContainer}>
       {/* When clicked -- will open a individual product page */}
-      <Link
-        href='/test'
-        className='w-full flex flex-col gap-4 sm:w-[45%] lg:[22%]'
-      >
-        <div className='relative w-full h-80'>
+      <Link href='/test' className={featuredProductsItem}>
+        <div className={featuredProductsImageWrapper}>
           <Image
             src='https://images.pexels.com/photos/372166/pexels-photo-372166.jpeg?auto=compress&cs=tinysrgb&w=800'
             alt=''
             fill
             sizes='25vw'
-            className='absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500'
+            className={featuredProductsFirstImage}
           />
           {/* Add second image of hover-over */}
           <Image
@@ -24,9 +28,17 @@ const ProductList = () => {
             alt=''
             fill
             sizes='25vw'
-            className='absolute object-cover rounded-md'
+            className={featuredProductsSecondImage}
           />
         </div>
+        <div className='flex justify-between'>
+          <span className='font-medium'>Product Name</span>
+          <span className='font-semibold'>$49</span>
+        </div>
+        <div className='text-sm text-gray-500'>My description</div>
+        <button className='rounded-2xl ring-1 ring-salmon-color w-max text-salmon-color py-2 px-4 text-xs hover:bg-salmon-color hover:text-white'>
+          Add to Cart
+        </button>
       </Link>
     </div>
   )
