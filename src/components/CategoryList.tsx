@@ -26,6 +26,67 @@ const CategoryList = () => {
           </div>
           <h1 className={categoryName}>Category Name</h1>
         </Link>
+        {/* ==== */}
+        <Link href='/list?cat=test' className={categoryListLink}>
+          <div className={categoryListImageWrapper}>
+            <Image
+              src='https://images.pexels.com/photos/33393/caudata-strelitzia-bird-of-paradise-flower-strelitzia-orchids.jpg?auto=compress&cs=tinysrgb&w=800'
+              alt=''
+              fill
+              sizes='20vw'
+              className={categoryListImage}
+            />
+          </div>
+          <h1 className={categoryName}>Category Name</h1>
+        </Link>
+        <Link href='/list?cat=test' className={categoryListLink}>
+          <div className={categoryListImageWrapper}>
+            <Image
+              src='https://images.pexels.com/photos/33393/caudata-strelitzia-bird-of-paradise-flower-strelitzia-orchids.jpg?auto=compress&cs=tinysrgb&w=800'
+              alt=''
+              fill
+              sizes='20vw'
+              className={categoryListImage}
+            />
+          </div>
+          <h1 className={categoryName}>Category Name</h1>
+        </Link>
+        <Link href='/list?cat=test' className={categoryListLink}>
+          <div className={categoryListImageWrapper}>
+            <Image
+              src='https://images.pexels.com/photos/33393/caudata-strelitzia-bird-of-paradise-flower-strelitzia-orchids.jpg?auto=compress&cs=tinysrgb&w=800'
+              alt=''
+              fill
+              sizes='20vw'
+              className={categoryListImage}
+            />
+          </div>
+          <h1 className={categoryName}>Category Name</h1>
+        </Link>
+        <Link href='/list?cat=test' className={categoryListLink}>
+          <div className={categoryListImageWrapper}>
+            <Image
+              src='https://images.pexels.com/photos/33393/caudata-strelitzia-bird-of-paradise-flower-strelitzia-orchids.jpg?auto=compress&cs=tinysrgb&w=800'
+              alt=''
+              fill
+              sizes='20vw'
+              className={categoryListImage}
+            />
+          </div>
+          <h1 className={categoryName}>Category Name</h1>
+        </Link>
+        <Link href='/list?cat=test' className={categoryListLink}>
+          <div className={categoryListImageWrapper}>
+            <Image
+              src='https://images.pexels.com/photos/33393/caudata-strelitzia-bird-of-paradise-flower-strelitzia-orchids.jpg?auto=compress&cs=tinysrgb&w=800'
+              alt=''
+              fill
+              sizes='20vw'
+              className={categoryListImage}
+            />
+          </div>
+          <h1 className={categoryName}>Category Name</h1>
+        </Link>
       </div>
     </div>
   )
