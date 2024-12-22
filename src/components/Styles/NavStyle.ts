@@ -1,4 +1,4 @@
-export const navMenuSize = 'h-20 px-4 md:px-8 lg:px-16 xl:32 2xl:0x-64 relative'
+export const navMenuSize = 'h-20 px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative'
 export const navLogo = 'text-2xl tracking-wide'
 export const navLogoImage = 'flex items-center gap-3'
 export const navMobile = 'h-full flex items-center justify-between md:hidden'
