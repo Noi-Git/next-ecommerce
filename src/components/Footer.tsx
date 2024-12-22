@@ -86,7 +86,19 @@ const Footer = () => {
         </div>
       </div>
       {/* BOTTOM */}
-      <div className='bottom'></div>
+      <div className='flex flex-col md:flex-row items-center justify-between gap-8 mt-16'>
+        <div className='i'>@ 2024 Noi Shop</div>
+        <div className='i'>
+          <div className='i'>
+            <span className='text-gray-500 mr-4'>Language</span>
+            <span className='font-medium'>United States | English</span>
+          </div>
+          <div className='i'>
+            <span className='text-gray-500 mr-4'>Currency</span>
+            <span className='font-medium'>$ USD</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
