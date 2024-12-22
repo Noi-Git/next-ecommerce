@@ -1,15 +1,28 @@
 import Link from 'next/link'
 import { navLogo } from './Styles/NavStyle'
 import Image from 'next/image'
-import { navFooterContainer } from './Styles/Footer'
+import {
+  navFooterBottomRight,
+  navFooterBottomSection,
+  navFooterButton,
+  navFooterCenterContents,
+  navFooterCenterContentsDesc,
+  navFooterCenterContentsTitle,
+  navFooterContainer,
+  navFooterTopCenter,
+  navFooterTopContainer,
+  navFooterTopLeft,
+  navFooterTopRight,
+  navFooterTopRightTitle,
+} from './Styles/Footer'
 
 const Footer = () => {
   return (
     <div className={navFooterContainer}>
       {/* TOP */}
-      <div className='flex flex-col md:flex-row justify-between gap-24'>
+      <div className={navFooterTopContainer}>
         {/* LEFT */}
-        <div className='w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8'>
+        <div className={navFooterTopLeft}>
           <Link href='/'>
             <div className={navLogo}>NOISHOP</div>
           </Link>
@@ -25,11 +38,11 @@ const Footer = () => {
           </div>
         </div>
         {/* CENTER */}
-        <div className='hidden lg:flex justify-between w-1/2'>
+        <div className={navFooterTopCenter}>
           {/* ==== COMPANY ==== */}
-          <div className='flex flex-col justify-between'>
-            <h1 className='font-medium text-lg'>COMPANY</h1>
-            <div className='flex flex-col gap-6'>
+          <div className={navFooterCenterContents}>
+            <h1 className={navFooterCenterContentsTitle}>COMPANY</h1>
+            <div className={navFooterCenterContentsDesc}>
               <Link href=''>About Us</Link>
               <Link href=''>Careers</Link>
               <Link href=''>Affiliates</Link>
@@ -38,9 +51,9 @@ const Footer = () => {
             </div>
           </div>
           {/* ==== SHOP ==== */}
-          <div className='flex flex-col justify-between'>
-            <h1 className='font-medium text-lg'>COMPANY</h1>
-            <div className='flex flex-col gap-6'>
+          <div className={navFooterCenterContents}>
+            <h1 className={navFooterCenterContentsTitle}>COMPANY</h1>
+            <div className={navFooterCenterContentsDesc}>
               <Link href=''>New Arrivals</Link>
               <Link href=''>Accessories</Link>
               <Link href=''>Men</Link>
@@ -49,9 +62,9 @@ const Footer = () => {
             </div>
           </div>
           {/* ==== CUSTOMER SERVICE */}
-          <div className='flex flex-col justify-between'>
-            <h1 className='font-medium text-lg'>COMPANY</h1>
-            <div className='flex flex-col gap-6'>
+          <div className={navFooterCenterContents}>
+            <h1 className={navFooterCenterContentsTitle}>COMPANY</h1>
+            <div className={navFooterCenterContentsDesc}>
               <Link href=''>Customer Service</Link>
               <Link href=''>My Account</Link>
               <Link href=''>Find a Store</Link>
@@ -61,8 +74,8 @@ const Footer = () => {
           </div>
         </div>
         {/* RIGHT */}
-        <div className='w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8'>
-          <h1 className='font-medium text-lg'>SUBSCRIBE</h1>
+        <div className={navFooterTopRight}>
+          <h1 className={navFooterTopRightTitle}>SUBSCRIBE</h1>
           <p>
             Be the first to get the latest news about trends, promotions, and
             much more!
@@ -73,7 +86,7 @@ const Footer = () => {
               placeholder='Email address'
               className='p-4 w-3/4'
             />
-            <button className='w-1/4 bg-salmon-color text-white'>JOIN</button>
+            <button className={navFooterButton}>JOIN</button>
           </div>
           <span className='font-semibold'>Secure Payments</span>
           <div className='flex justify-between'>
@@ -86,14 +99,14 @@ const Footer = () => {
         </div>
       </div>
       {/* BOTTOM */}
-      <div className='flex flex-col md:flex-row items-center justify-between gap-8 mt-16'>
-        <div className='i'>@ 2024 Noi Shop</div>
-        <div className='flex flex-col gap-8 md:flex-row'>
+      <div className={navFooterBottomSection}>
+        <div>@ 2024 Noi Shop</div>
+        <div className={navFooterBottomRight}>
           <div>
             <span className='text-gray-500 mr-4'>Language</span>
             <span className='font-medium'>United States | English</span>
           </div>
-          <div className='i'>
+          <div>
             <span className='text-gray-500 mr-4'>Currency</span>
             <span className='font-medium'>$ USD</span>
           </div>
