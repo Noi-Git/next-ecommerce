@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className={navFooterContainer}>
       {/* TOP */}
-      <div className='flex justify-between gap-24'>
+      <div className='flex flex-col md:flex-row justify-between gap-24'>
         {/* LEFT */}
         <div className='w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8'>
           <Link href='/'>
@@ -40,6 +40,14 @@ const Footer = () => {
               className='p-4 w-3/4'
             />
             <button className='w-1/4 bg-salmon-color text-white'>JOIN</button>
+          </div>
+          <span className='font-semibold'>Secure Payments</span>
+          <div className='flex justify-between'>
+            <Image src='/discover.png' alt='' width={40} height={20} />
+            <Image src='/skrill.png' alt='' width={40} height={20} />
+            <Image src='/paypal.png' alt='' width={40} height={20} />
+            <Image src='/mastercard.png' alt='' width={40} height={20} />
+            <Image src='/visa.png' alt='' width={40} height={20} />
           </div>
         </div>
       </div>
