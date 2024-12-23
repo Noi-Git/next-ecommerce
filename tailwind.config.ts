@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         'salmon-color': '#F35C7A',
+        'filter-color': '#EBEDED',
       },
     },
   },
