@@ -38,6 +38,13 @@ const Filter = () => {
         </select>
       </div>
       {/* RIGHT SIDE */}
+      <select name='' id='' className={filterSelect}>
+        <option>Sort By</option>
+        <option value=''>Price (low to high)</option>
+        <option value=''>Price (high to low)</option>
+        <option value=''>Newest</option>
+        <option value=''>Oldest</option>
+      </select>
     </div>
   )
 }
