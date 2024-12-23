@@ -1,3 +1,5 @@
+import Filter from '@/components/Filter'
+import ProductList from '@/components/ProductList'
 import Image from 'next/image'
 import React from 'react'
 
@@ -18,6 +20,12 @@ const ListPage = () => {
           <Image src='/woman.png' alt='' fill className='object-contain' />
         </div>
       </div>
+      {/* FILTER PAGE */}
+      <Filter />
+      {/* PRODUCTS PAGE */}
+      {/* This title will be dynamic -- it is just a placeholder for now */}
+      <h1 className=''>Shoes For You!</h1>
+      <ProductList />
     </div>
   )
 }
