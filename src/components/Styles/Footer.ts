@@ -1,5 +1,5 @@
 export const navFooterContainer =
-  'px-4 py-24 md:px-8 lg:px-16 xl:32 2xl:px-64 bg-gray-100 text-sm mt-23'
+  'px-4 py-24 md:px-8 lg:px-16 xl:32 2xl:px-64 bg-gray-100 text-sm mt-20'
 export const navFooterTopContainer =
   'flex flex-col md:flex-row justify-between gap-24'
 export const navFooterTopLeft = 'w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8'
