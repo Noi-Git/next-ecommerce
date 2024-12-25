@@ -1,11 +1,11 @@
 import React from 'react'
-import { filterSelect } from './Styles/FilterStyle'
+import { filterInput, filterSelect, filterSortBy } from './Styles/FilterStyle'
 
 const Filter = () => {
   return (
     <div className='mt-12 flex justify-between'>
       {/* LEFT SIDE */}
-      <div className='flex gap-6'>
+      <div className='flex gap-6 flex-wrap'>
         <select name='type' id='' className={filterSelect}>
           <option>Type</option>
           <option value='physical'>Physical</option>
@@ -15,13 +15,13 @@ const Filter = () => {
           type='text'
           name='min'
           placeholder='min price'
-          className='text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400'
+          className={filterInput}
         />
         <input
           type='text'
           name='max'
           placeholder='max price'
-          className='text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400'
+          className={filterInput}
         />
         <select name='size' id='' className={filterSelect}>
           <option>Size</option>
@@ -38,7 +38,7 @@ const Filter = () => {
         </select>
       </div>
       {/* RIGHT SIDE */}
-      <select name='' id='' className={filterSelect}>
+      <select name='' id='' className={filterSortBy}>
         <option>Sort By</option>
         <option value=''>Price (low to high)</option>
         <option value=''>Price (high to low)</option>
