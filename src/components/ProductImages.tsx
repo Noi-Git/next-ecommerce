@@ -26,7 +26,7 @@ const ProductImages = () => {
   return (
     <div>
       {/* BIG IMAGE */}
-      <div className='h-[500px] replattive'>
+      <div className='h-[500px] relative'>
         <Image
           src={images[index].url}
           alt=''
@@ -37,8 +37,12 @@ const ProductImages = () => {
       </div>
       {/* SMALL IMAGE */}
       <div className=''>
-        {images.map((img) => (
-          <div className='w-1/4 h-32 replattive gap-4 mt-8' key={img.id}>
+        {images.map((img, i) => (
+          <div
+            className='w-1/4 h-32 relative gap-4 mt-8'
+            key={img.id}
+            onClick={() => setIndex(i)}
+          >
             <Image
               src={img.url}
               alt=''
