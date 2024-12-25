@@ -9,7 +9,15 @@ const SinglePage = () => {
         <ProductImages />
       </div>
       {/* TEXT */}
-      <div className='w-full lg:w-1/2 flex flex-col gap-6'>Texts</div>
+      <div className='w-full lg:w-1/2 flex flex-col gap-6'>
+        <h1 className='text-4xl font-medium'>Product Name</h1>
+        <p className='text-gray-500'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia iure
+          ducimus magnam explicabo, culpa distinctio. Officiis eius, nobis
+          reiciendis ex ut excepturi distinctio quo, ratione consectetur
+          aliquam, iure architecto perferendis aperiam ab.
+        </p>
+      </div>
     </div>
   )
 }
