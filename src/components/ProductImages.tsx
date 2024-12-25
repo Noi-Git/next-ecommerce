@@ -37,15 +37,17 @@ const ProductImages = () => {
       </div>
       {/* SMALL IMAGE */}
       <div className=''>
-        <div className='w-1/4 h-32 replattive gap-4 mt-8'>
-          <Image
-            src='https://images.pexels.com/photos/54319/cranesbill-blossom-bloom-blue-54319.jpeg?auto=compress&cs=tinysrgb&w=800'
-            alt=''
-            fill
-            sizes='30vw'
-            className='object-cover rounded-md'
-          />
-        </div>
+        {images.map((img) => (
+          <div className='w-1/4 h-32 replattive gap-4 mt-8' key={img.id}>
+            <Image
+              src={img.url}
+              alt=''
+              fill
+              sizes='30vw'
+              className='object-cover rounded-md'
+            />
+          </div>
+        ))}
       </div>
     </div>
   )
