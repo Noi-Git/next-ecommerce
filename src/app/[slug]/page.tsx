@@ -17,6 +17,7 @@ const SinglePage = () => {
           reiciendis ex ut excepturi distinctio quo, ratione consectetur
           aliquam, iure architecto perferendis aperiam ab.
         </p>
+        <div className='h-[2px] bg-gray-100' />
       </div>
     </div>
   )
