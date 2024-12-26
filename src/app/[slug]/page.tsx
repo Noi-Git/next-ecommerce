@@ -27,6 +27,38 @@ const SinglePage = () => {
         <div className='h-[2px] bg-gray-100' />
         <CustomizeProducts />
         <Add />
+        <div className='h-[2px] bg-gray-100' />
+        <div className='text-sm'>
+          <h4 className='font-medium mb-4 uppercase'>Product Info</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
+            laboriosam omnis harum quis culpa iure quidem soluta voluptate ex,
+            quaerat laudantium ipsum nihil dolorum, nam excepturi veritatis nemo
+            maxime natus libero repudiandae provident. Sapiente modi repellendus
+            accusamus delectus dolore ex?
+          </p>
+        </div>
+        {/* ====== */}
+        <div className='text-sm'>
+          <h4 className='font-medium mb-4 uppercase'>Return & Refund Policy</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
+            laboriosam omnis harum quis culpa iure quidem soluta voluptate ex,
+            quaerat laudantium ipsum nihil dolorum, nam excepturi veritatis nemo
+            maxime natus libero repudiandae provident. Sapiente modi repellendus
+            accusamus delectus dolore ex?
+          </p>
+        </div>
+        <div className='text-sm'>
+          <h4 className='font-medium mb-4 uppercase'>Shipping Info</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
+            laboriosam omnis harum quis culpa iure quidem soluta voluptate ex,
+            quaerat laudantium ipsum nihil dolorum, nam excepturi veritatis nemo
+            maxime natus libero repudiandae provident. Sapiente modi repellendus
+            accusamus delectus dolore ex?
+          </p>
+        </div>
       </div>
     </div>
   )
