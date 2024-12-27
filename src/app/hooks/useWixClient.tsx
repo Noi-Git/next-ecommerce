@@ -3,4 +3,6 @@
 import { WixClientContext } from '@/context/wixContext'
 import { useContext } from 'react'
 
-const wixClient = useContext(WixClientContext)
+export const useWixClient = () => {
+  return useContext(WixClientContext)
+}
