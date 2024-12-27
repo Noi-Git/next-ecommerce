@@ -5,6 +5,19 @@ import { addToCartButton } from './Styles/AddStyle'
 
 const Add = () => {
   const [quantity, setQuantity] = useState(1)
+
+  // TEMPORARY
+  const stock = 4
+
+  const handleQuantity = (type: 'i' | 'd') => {
+    if (type === 'd' && quantity > 1) {
+      setQuantity((prev) => prev - 1)
+    }
+    if (type === 'i' && quantity < stock) {
+      setQuantity((prev) => prev + 1)
+    }
+  }
+
   return (
     <div className='flex flex-col gap-4'>
       <h4 className='font-medium'>Choose a Quantity</h4>
@@ -12,9 +25,19 @@ const Add = () => {
         <div className='flex items-center gap-4'>
           {/* SELECT QUANTITY BUTTON */}
           <div className='bg-gray-100 py-2 px-4 rounded-3xl flex items-center justify-between w-32'>
-            <button className='cursor-pointer text-xl'>-</button>
+            <button
+              className='cursor-pointer text-xl'
+              onClick={() => handleQuantity('d')}
+            >
+              -
+            </button>
             {quantity}
-            <button className='cursor-pointer text-xl'>+</button>
+            <button
+              className='cursor-pointer text-xl'
+              onClick={() => handleQuantity('i')}
+            >
+              +
+            </button>
           </div>
           {/* SELECT QUANTITY TEXT */}
           <div className='text-xs'>
