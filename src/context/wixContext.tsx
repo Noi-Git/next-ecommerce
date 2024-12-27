@@ -16,12 +16,10 @@ const myWixClient = createClient({
     clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID!,
     tokens: {
       accessToken: {
-        value: '<ACCESS_TOKEN_VALUE>',
-        expiresAt: '<ACCESS_TOKEN_EXPIRY_DATE>',
+        value: '',
+        expiresAt: 0,
       },
-      refreshToken: {
-        value: '<REFRESH_TOKEN_VALUE>',
-      },
+      refreshToken,
     },
   }),
 })
