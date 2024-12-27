@@ -1,8 +1,19 @@
+'use client'
 import CategoryList from '@/components/CategoryList'
 import ProductList from '@/components/ProductList'
 import Slider from '@/components/Slider'
+import { WixClientContext } from '@/context/wixContext'
+import { useContext } from 'react'
 
 const HomePage = () => {
+  // USE REACT HOOK TO GET FROM WixClientContext() - need to change the component to the client side when using hook
+  const wixContext = useContext(WixClientContext)
+
+  // FETCH DATA
+  const getProduct = async () => {
+    const res = await wixContext.products.queryProducts().find()
+  }
+
   return (
     <div className=''>
       <Slider />
