@@ -1,10 +1,10 @@
-'use client'
+// 'use client'
 import CategoryList from '@/components/CategoryList'
 import ProductList from '@/components/ProductList'
 import Slider from '@/components/Slider'
-import { WixClientContext } from '@/context/wixContext'
-import { useContext, useEffect } from 'react'
-import { useWixClient } from '../hooks/useWixClient'
+// import { WixClientContext } from '@/context/wixContext'
+// import { useContext, useEffect } from 'react'
+// import { useWixClient } from '../hooks/useWixClient'
 import { wixClientServer } from '@/lib/wixClientServer'
 
 const HomePage = async () => {
@@ -23,6 +23,8 @@ const HomePage = async () => {
   }, [wixClient])
   */
   const wixClient = await wixClientServer()
+  const res = await wixClient.products.queryProducts().find()
+  console.log(res)
 
   return (
     <div className=''>
