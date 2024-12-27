@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@wix/sdk": "^1.15.7",
+    "@wix/stores": "^1.0.326",
     "next": "^14.2.20",
     "react": "^18",
     "react-dom": "^18"
