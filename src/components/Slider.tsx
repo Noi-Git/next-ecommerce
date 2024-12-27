@@ -13,7 +13,7 @@ import {
   sliderText,
   sliderTitle,
   sliderWrapper,
-} from './Styles/Slider'
+} from './Styles/SliderStyle'
 import Link from 'next/link'
 import Image from 'next/image'
 

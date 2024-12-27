@@ -24,7 +24,7 @@ const ListPage = () => {
       <Filter />
       {/* PRODUCTS PAGE */}
       {/* This title will be dynamic -- it is just a placeholder for now */}
-      <h1 className='mt-12 font-semibold text-xl'>Shoes For You!</h1>
+      <h1 className='mt-12 font-semibold text-xl'>Choose For You!</h1>
       <ProductList />
     </div>
   )

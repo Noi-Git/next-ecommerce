@@ -14,7 +14,7 @@ import {
   navFooterTopLeft,
   navFooterTopRight,
   navFooterTopRightTitle,
-} from './Styles/Footer'
+} from './Styles/FooterStyle'
 
 const Footer = () => {
   return (

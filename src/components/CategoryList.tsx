@@ -8,7 +8,7 @@ import {
   categoryListLink,
   categoryListLinkWrapper,
   categoryName,
-} from './Styles/CategoryList'
+} from './Styles/CategoryListStyle'
 
 const CategoryList = () => {
   return (
