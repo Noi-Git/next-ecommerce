@@ -31,6 +31,7 @@ export type WixClient = typeof wixClient
 
 export const WixClientContext = createContext<WixClient>(wixClient)
 
+// EXPORT THE PROVIDER - SO WE CAN USE THE CLIENT
 export const WixClientContextProvider = ({
   children,
 }: {
