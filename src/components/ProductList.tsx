@@ -8,7 +8,7 @@ import {
   featuredProductsImageWrapper,
   featuredProductsItem,
   featuredProductsSecondImage,
-} from './Styles/ProductList'
+} from './Styles/ProductListStyle'
 
 const ProductList = () => {
   return (

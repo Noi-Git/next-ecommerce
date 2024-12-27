@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { addToCartButton } from './Styles/AddStyle'
+import { addToCartButton, quantityButton } from './Styles/AddStyle'
 
 const Add = () => {
   const [quantity, setQuantity] = useState(1)
@@ -24,7 +24,7 @@ const Add = () => {
       <div className='flex justify-between'>
         <div className='flex items-center gap-4'>
           {/* SELECT QUANTITY BUTTON */}
-          <div className='bg-gray-100 py-2 px-4 rounded-3xl flex items-center justify-between w-32'>
+          <div className={quantityButton}>
             <button
               className='cursor-pointer text-xl'
               onClick={() => handleQuantity('d')}
