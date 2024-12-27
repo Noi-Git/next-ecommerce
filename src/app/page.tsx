@@ -5,8 +5,10 @@ import Slider from '@/components/Slider'
 import { WixClientContext } from '@/context/wixContext'
 import { useContext, useEffect } from 'react'
 import { useWixClient } from '../hooks/useWixClient'
+import { wixClientServer } from '@/lib/wixClientServer'
 
-const HomePage = () => {
+const HomePage = async () => {
+  /*
   // USE REACT HOOK TO GET FROM WixClientContext() - need to change the component to the client side when using hook
   const wixClient = useWixClient()
 
@@ -19,6 +21,8 @@ const HomePage = () => {
     }
     getProduct()
   }, [wixClient])
+  */
+  const wixClient = await wixClientServer()
 
   return (
     <div className=''>
