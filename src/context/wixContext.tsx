@@ -5,7 +5,7 @@ import { products, collections } from '@wix/stores'
 import Cookies from 'js-cookie'
 
 // CHECK COOKIES
-const refreshToken = Cookies.get('refreshToken')
+const refreshToken = JSON.parse(Cookies.get('refreshToken') || '{}')
 
 const myWixClient = createClient({
   modules: {
