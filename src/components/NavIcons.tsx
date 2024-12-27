@@ -56,14 +56,16 @@ const NavIcons = () => {
         height={22}
         className={navbarIconNotification}
       />
-      <div className={navbarIconCart}>
+      <div
+        className={navbarIconCart}
+        onClick={() => setIsCartOpen((prev) => !prev)}
+      >
         <Image
           src='/cart.png'
           alt=''
           width={22}
           height={22}
           // className={navbarIconCart}
-          onClick={() => setIsCartOpen((prev) => !prev)}
         />
         <div className={navbarIconCartAmount}>2</div>
       </div>
