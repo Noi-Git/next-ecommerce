@@ -5,7 +5,7 @@ import { products, collections } from '@wix/stores'
 import Cookies from 'js-cookie'
 import { createContext, ReactNode } from 'react'
 
-// CHECK COOKIES
+// CHECK COOKIES - products in the cart will stay after refresh the page
 const refreshToken = JSON.parse(Cookies.get('refreshToken') || '{}')
 
 const wixClient = createClient({
@@ -17,11 +17,11 @@ const wixClient = createClient({
   auth: OAuthStrategy({
     clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID!,
     tokens: {
+      refreshToken,
       accessToken: {
         value: '',
         expiresAt: 0,
       },
-      refreshToken,
     },
   }),
 })
