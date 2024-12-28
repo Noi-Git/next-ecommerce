@@ -10,7 +10,13 @@ import {
   featuredProductsSecondImage,
 } from './Styles/ProductListStyle'
 
-const ProductList = () => {
+const ProductList = async ({
+  categoryId,
+  limit,
+}: {
+  categoryId: string
+  limit: number
+}) => {
   return (
     <div className={featuredProductsContainer}>
       {/* When clicked -- will open a individual product page */}
