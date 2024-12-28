@@ -11,6 +11,7 @@ import {
 } from './Styles/ProductListStyle'
 import { wixClientServer } from '@/lib/wixClientServer'
 import { products } from '@wix/stores'
+import DOMPurify from 'isomorphic-dompurify'
 
 const PRODUCT_PER_PAGE = 20
 
@@ -35,7 +36,8 @@ const ProductList = async ({
     .limit(limit || PRODUCT_PER_PAGE)
     .find()
 
-  console.log(res.items[0])
+  // console.log(res.items[0])
+
   return (
     <div className={featuredProductsContainer}>
       {res.items.map((product: products.Product) => (
@@ -68,11 +70,16 @@ const ProductList = async ({
             <span className='font-semibold'>${product.priceData?.price}</span>
           </div>
           {product.additionalInfoSections && (
-            <div className='text-sm text-gray-500'>
-              {product.additionalInfoSections.find(
-                (section: any) => section.title === 'shortDesc'
-              )?.description || ''}
-            </div>
+            <div
+              className='text-sm text-gray-500'
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(
+                  product.additionalInfoSections.find(
+                    (section: any) => section.title === 'shortDesc'
+                  )?.description || ''
+                ),
+              }}
+            ></div>
           )}
           <button className={featuredProductsButton}>Add to Cart</button>
         </Link>
