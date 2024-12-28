@@ -30,6 +30,7 @@ const ProductList = async ({
     */
   const res = await wixClient.products
     .queryProducts()
+    .eq('collectionIds', categoryId)
     .limit(limit || PRODUCT_PER_PAGE)
     .find()
   return (
