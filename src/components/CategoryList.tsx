@@ -20,20 +20,20 @@ const CategoryList = async () => {
       <div className={categoryListLinkWrapper}>
         {cats.items.map((item) => (
           <Link
-            href='/list?cat=test'
+            href={`/list?cat=${item.slug}`}
             className={categoryListLink}
-            key={item.id}
+            key={item._id}
           >
             <div className={categoryListImageWrapper}>
               <Image
-                src='https://images.pexels.com/photos/60702/blossom-bloom-flower-wild-flower-60702.jpeg?auto=compress&cs=tinysrgb&w=800'
+                src={item.media?.mainMedia?.image?.url || '/cat.png'}
                 alt=''
                 fill
                 sizes='20vw'
                 className={categoryListImage}
               />
             </div>
-            <h1 className={categoryName}>Category Name</h1>
+            <h1 className={categoryName}>{item.name}</h1>
           </Link>
         ))}
       </div>
