@@ -9,8 +9,12 @@ import {
   categoryListLinkWrapper,
   categoryName,
 } from './Styles/CategoryListStyle'
+import { wixClientServer } from '@/lib/wixClientServer'
 
-const CategoryList = () => {
+const CategoryList = async () => {
+  const wixClient = await wixClientServer()
+  const cat = wixClient.collections.queryCollections().find()
+
   return (
     <div className={categoryListContainer}>
       <div className={categoryListLinkWrapper}>
