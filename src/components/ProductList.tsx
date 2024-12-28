@@ -34,32 +34,46 @@ const ProductList = async ({
     .eq('collectionIds', categoryId)
     .limit(limit || PRODUCT_PER_PAGE)
     .find()
+
+  console.log(res.items[0])
   return (
     <div className={featuredProductsContainer}>
       {res.items.map((product: products.Product) => (
-        <Link href='/test' key={product._id} className={featuredProductsItem}>
+        <Link
+          href={'/' + product.slug}
+          key={product._id}
+          className={featuredProductsItem}
+        >
           <div className={featuredProductsImageWrapper}>
             <Image
-              src='https://images.pexels.com/photos/264787/pexels-photo-264787.jpeg?auto=compress&cs=tinysrgb&w=800'
+              src={product.media?.mainMedia?.image?.url || '/product.png'}
               alt=''
               fill
               sizes='25vw'
               className={featuredProductsFirstImage}
             />
             {/* Add second image of hover-over */}
-            <Image
-              src='https://images.pexels.com/photos/1073567/pexels-photo-1073567.jpeg?auto=compress&cs=tinysrgb&w=800'
-              alt=''
-              fill
-              sizes='25vw'
-              className={featuredProductsSecondImage}
-            />
+            {product.media?.items && (
+              <Image
+                src={product.media?.items[1]?.image?.url || '/product.png'}
+                alt=''
+                fill
+                sizes='25vw'
+                className={featuredProductsSecondImage}
+              />
+            )}
           </div>
           <div className='flex justify-between'>
-            <span className='font-medium'>Product Name</span>
-            <span className='font-semibold'>$49</span>
+            <span className='font-medium'>{product.name}</span>
+            <span className='font-semibold'>${product.priceData?.price}</span>
           </div>
-          <div className='text-sm text-gray-500'>My description</div>
+          {product.additionalInfoSections && (
+            <div className='text-sm text-gray-500'>
+              {product.additionalInfoSections.find(
+                (section: any) => section.title === 'shortDesc'
+              )?.description || ''}
+            </div>
+          )}
           <button className={featuredProductsButton}>Add to Cart</button>
         </Link>
       ))}
