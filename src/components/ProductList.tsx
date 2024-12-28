@@ -9,14 +9,29 @@ import {
   featuredProductsItem,
   featuredProductsSecondImage,
 } from './Styles/ProductListStyle'
+import { wixClientServer } from '@/lib/wixClientServer'
+
+const PRODUCT_PER_PAGE = 20
 
 const ProductList = async ({
   categoryId,
   limit,
 }: {
   categoryId: string
-  limit: number
+  limit?: number
 }) => {
+  const wixClient = await wixClientServer()
+  /*
+  // add limit for the Feature Product - if no limit shows 20 - the limit comes from parent component
+  const res = await wixClient.products
+    .queryProducts()
+    .limit(limit || 20)
+    .find()
+    */
+  const res = await wixClient.products
+    .queryProducts()
+    .limit(limit || PRODUCT_PER_PAGE)
+    .find()
   return (
     <div className={featuredProductsContainer}>
       {/* When clicked -- will open a individual product page */}
