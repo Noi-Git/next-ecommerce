@@ -12,6 +12,7 @@ import {
 import { wixClientServer } from '@/lib/wixClientServer'
 
 const CategoryList = async () => {
+  //call wix client
   const wixClient = await wixClientServer()
   const cats = await wixClient.collections.queryCollections().find()
 
