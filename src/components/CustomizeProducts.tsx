@@ -28,20 +28,27 @@ const CustomizeProducts = ({
       {productOptions.map((option) => (
         <div className='flex flex-col gap-4' key={option.name}>
           <h4 className='font-medium'>{option.name}</h4>
+          {option.choices?.map((choice) => (
+            <div className='' key={choice.value}>
+              {choice.description}
+            </div>
+          ))}
+        </div>
+      ))}
+
+      {/* === COLOR === */}
+      {/*
+      
           <ul className='flex items-center gap-3'>
-            {/* INSIDE CIRCLE */}
             <li className={chooseColorRed}>
-              {/* OUTSIDE CIRCLE - WHEN ITEM SELECTED */}
               <div className={selectedColor}></div>
             </li>
             <li className={chooseColorBlue}></li>
             <li className={chooseColorGreen}>
-              {/* CROSS LINE - WHEN ITEM IS NOT AVAILABLE */}
               <div className={unavailableColor}></div>
             </li>
           </ul>
-        </div>
-      ))}
+          */}
 
       {/* CHOOSE SIZE */}
       {/* <h4 className='font-medium'>Choose a size</h4>
