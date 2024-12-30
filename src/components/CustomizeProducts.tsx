@@ -40,10 +40,14 @@ const CustomizeProducts = ({
       return (
         Object.entries(choices).every(
           ([key, value]) => variantChoices[key] === value
-        ) && variant.stock?.inStock
+        ) &&
+        variant.stock?.inStock &&
+        variant.stock?.quantity &&
+        variant.stock?.quantity > 0
       )
     })
   }
+  console.log('🚀 ~ returnvariants.some ~ variants:', variants)
 
   console.log(selectedOptions)
 
@@ -53,17 +57,29 @@ const CustomizeProducts = ({
       {productOptions.map((option) => (
         <div className='flex flex-col gap-4' key={option.name}>
           <h4 className='font-medium'>Choose {option.name}</h4>
-          {option.choices?.map((choice) => (
-            <div
-              className=''
-              key={choice.value}
-              onClick={() =>
-                handleOptionSelect(option.name!, choice.description!)
-              }
-            >
-              {choice.description}
-            </div>
-          ))}
+          {option.choices?.map((choice) => {
+            const disabled = !isVariantInStock({
+              ...selectedOptions,
+              [option.name!]: choice.description!,
+            })
+            const selected =
+              selectedOptions[option.name!] === choice.description
+
+            return (
+              <div
+                className=''
+                key={choice.value}
+                onClick={() =>
+                  handleOptionSelect(option.name!, choice.description!)
+                }
+              >
+                {/* if it disable - show the text disabled {disabled && 'disabled'} */}
+                {choice.description}
+                {disabled && 'disabled'}
+                {selected && 'selected'}
+              </div>
+            )
+          })}
         </div>
       ))}
 
