@@ -65,7 +65,7 @@ const CustomizeProducts = ({
             const selected =
               selectedOptions[option.name!] === choice.description
 
-            return (
+            return option.name === 'color' ? () : () (
               <div
                 className=''
                 key={choice.value}
