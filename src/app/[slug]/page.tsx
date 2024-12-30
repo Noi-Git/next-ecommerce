@@ -34,14 +34,18 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
         <h1 className='text-4xl font-medium'>{product.name}</h1>
         <p className='text-gray-500'>{product.description}</p>
         <div className='h-[2px] bg-gray-100' />
-        <div className='flex items-center gap-4'>
-          <h3 className='text-xl text-gray-500 line-through'>
-            {product.price?.price}
-          </h3>
+        {product.price?.price === product.price?.discountedPrice ? (
           <h2 className='font-medium text-2xl'>
-            {product.price?.discountedPrice}
+            $ {product.price?.discountedPrice}
           </h2>
-        </div>
+        ) : (
+          <div className='flex items-center gap-4'>
+            <h3 className='text-xl text-gray-500 line-through'>
+              $ {product.price?.price}
+            </h3>
+          </div>
+        )}
+
         <div className='h-[2px] bg-gray-100' />
         <CustomizeProducts />
         <Add />
