@@ -21,6 +21,7 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
   }
 
   const product = products.items[0]
+  console.log('🚀 ~ SinglePage ~ product:', product)
   // console.log('🚀 ~ SinglePage ~ product.price:', product.price)
 
   return (
@@ -50,37 +51,12 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
         <CustomizeProducts />
         <Add />
         <div className='h-[2px] bg-gray-100' />
-        <div className='text-sm'>
-          <h4 className='font-medium mb-4 uppercase'>Product Info</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
-            laboriosam omnis harum quis culpa iure quidem soluta voluptate ex,
-            quaerat laudantium ipsum nihil dolorum, nam excepturi veritatis nemo
-            maxime natus libero repudiandae provident. Sapiente modi repellendus
-            accusamus delectus dolore ex?
-          </p>
-        </div>
-        {/* ====== */}
-        <div className='text-sm'>
-          <h4 className='font-medium mb-4 uppercase'>Return & Refund Policy</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
-            laboriosam omnis harum quis culpa iure quidem soluta voluptate ex,
-            quaerat laudantium ipsum nihil dolorum, nam excepturi veritatis nemo
-            maxime natus libero repudiandae provident. Sapiente modi repellendus
-            accusamus delectus dolore ex?
-          </p>
-        </div>
-        <div className='text-sm'>
-          <h4 className='font-medium mb-4 uppercase'>Shipping Info</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
-            laboriosam omnis harum quis culpa iure quidem soluta voluptate ex,
-            quaerat laudantium ipsum nihil dolorum, nam excepturi veritatis nemo
-            maxime natus libero repudiandae provident. Sapiente modi repellendus
-            accusamus delectus dolore ex?
-          </p>
-        </div>
+        {product.additionalInfoSections?.map((section: any) => (
+          <div className='text-sm' key={section.title}>
+            <h4 className='font-medium mb-4 uppercase'>{section.title}</h4>
+            <p>{section.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   )
