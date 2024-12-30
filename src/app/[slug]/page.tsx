@@ -21,7 +21,7 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
   }
 
   const product = products.items[0]
-  // console.log('🚀 ~ SinglePage ~ product:', product)
+  console.log('🚀 ~ SinglePage ~ product:', product)
   // console.log('🚀 ~ SinglePage ~ product.price:', product.price)
   // console.log('🚀 ~ SinglePage ~ product.variant:', product.variants)
   console.log(
@@ -53,11 +53,14 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
         )}
 
         <div className='h-[2px] bg-gray-100' />
-        <CustomizeProducts
-          productId={product._id}
-          variants={product.variants}
-          productOption={product.productOptions}
-        />
+        {product._id && product.variants && product.productOptions && (
+          <CustomizeProducts
+            productId={product._id}
+            variants={product.variants}
+            productOptions={product.productOptions}
+          />
+        )}
+
         <Add />
         <div className='h-[2px] bg-gray-100' />
         {product.additionalInfoSections?.map((section: any) => (

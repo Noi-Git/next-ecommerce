@@ -16,18 +16,18 @@ import { products } from '@wix/stores'
 const CustomizeProducts = ({
   productId,
   variants,
-  productOption,
+  productOptions,
 }: {
   productId: string
   variants: products.Variant[]
-  productOption: products.ProductOption[]
+  productOptions: products.ProductOption[]
 }) => {
   return (
     <div className='flex flex-col gap-6'>
       {/* CHOOSE COLOR */}
-      {productOption.map((option) => (
+      {productOptions.map((option) => (
         <div className='flex flex-col gap-4' key={option.name}>
-          <h4 className='font-medium'>option.name</h4>
+          <h4 className='font-medium'>{option.name}</h4>
           <ul className='flex items-center gap-3'>
             {/* INSIDE CIRCLE */}
             <li className={chooseColorRed}>
