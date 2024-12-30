@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import {
+  chooseColor,
   chooseColorBlue,
   chooseColorGreen,
   chooseColorRed,
@@ -56,30 +57,33 @@ const CustomizeProducts = ({
       {/* CHOOSE COLOR */}
       {productOptions.map((option) => (
         <div className='flex flex-col gap-4' key={option.name}>
-          <h4 className='font-medium'>Choose {option.name}</h4>
-          {option.choices?.map((choice) => {
-            const disabled = !isVariantInStock({
-              ...selectedOptions,
-              [option.name!]: choice.description!,
-            })
-            const selected =
-              selectedOptions[option.name!] === choice.description
+          <h4 className='font-medium'>Choose a {option.name}</h4>
+          <ul className='flex items-center gap-3'>
+            {option.choices?.map((choice) => {
+              const disabled = !isVariantInStock({
+                ...selectedOptions,
+                [option.name!]: choice.description!,
+              })
+              const selected =
+                selectedOptions[option.name!] === choice.description
 
-            return option.name === 'color' ? () : () (
-              <div
-                className=''
-                key={choice.value}
-                onClick={() =>
-                  handleOptionSelect(option.name!, choice.description!)
-                }
-              >
-                {/* if it disable - show the text disabled {disabled && 'disabled'} */}
-                {choice.description}
-                {disabled && 'disabled'}
-                {selected && 'selected'}
-              </div>
-            )
-          })}
+              return option.name === 'Color' ? (
+                <li
+                  key={option.name}
+                  className={chooseColor}
+                  style={{
+                    backgroundColor: choice.value,
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                  }}
+                >
+                  {selected && <div className={selectedColor}></div>}
+                  {disabled && <div className={unavailableColor}></div>}
+                </li>
+              ) : (
+                <li className={sizeSmallButton}>{choice.description}</li>
+              )
+            })}
+          </ul>
         </div>
       ))}
 
@@ -109,3 +113,18 @@ const CustomizeProducts = ({
 }
 
 export default CustomizeProducts
+
+// (
+//   <div
+//     className=''
+//     key={choice.value}
+//     onClick={() =>
+//       handleOptionSelect(option.name!, choice.description!)
+//     }
+//   >
+//     {/* if it disable - show the text disabled {disabled && 'disabled'} */}
+//     {choice.description}
+//     {disabled && 'disabled'}
+//     {selected && 'selected'}
+//   </div>
+// )

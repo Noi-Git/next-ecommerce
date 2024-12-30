@@ -21,13 +21,10 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
   }
 
   const product = products.items[0]
-  console.log('🚀 ~ SinglePage ~ product:', product)
-  // console.log('🚀 ~ SinglePage ~ product.price:', product.price)
+  // console.log('🚀 ~ SinglePage ~ product:', product)
+  console.log('🚀 ~ SinglePage ~ product.priceData:', product.priceData)
   // console.log('🚀 ~ SinglePage ~ product.variant:', product.variants)
-  console.log(
-    '🚀 ~ SinglePage ~ product.productOptions:',
-    product.productOptions
-  )
+  // console.log('🚀 ~ SinglePage ~ product.productOptions:',product.productOptions)
 
   return (
     <div className='px-5 md:px-8 lg:px-16 xl:32 2xl:px-64 relative flex flex-col lg:flex-row gap-16'>
@@ -40,15 +37,17 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
         <h1 className='text-4xl font-medium'>{product.name}</h1>
         <p className='text-gray-500'>{product.description}</p>
         <div className='h-[2px] bg-gray-100' />
-        {product.price?.price === product.price?.discountedPrice ? (
-          <h2 className='font-medium text-2xl'>
-            $ {product.price?.discountedPrice}
-          </h2>
+        {/* {product.priceData?.price === product.priceData?.discountedPrice ? ( */}
+        {product.priceData?.price === product.priceData?.discountedPrice ? (
+          <h2 className='font-medium text-2xl'>${product.priceData?.price}</h2>
         ) : (
           <div className='flex items-center gap-4'>
             <h3 className='text-xl text-gray-500 line-through'>
-              $ {product.price?.price}
+              ${product.priceData?.price}
             </h3>
+            <h2 className='font-medium text-2xl'>
+              ${product.priceData?.discountedPrice}
+            </h2>
           </div>
         )}
 
