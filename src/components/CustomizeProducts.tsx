@@ -30,6 +30,21 @@ const CustomizeProducts = ({
     setSelectedOptions((prev) => ({ ...prev, [optionType]: choice }))
   }
 
+  console.log(variants)
+  // Check if the item exist in stock
+  const isVariantInStock = (choices: { [key: string]: string }) => {
+    return variants.some((variant) => {
+      const variantChoices = variant.choices
+      if (!variantChoices) return false
+
+      return (
+        Object.entries(choices).every(
+          ([key, value]) => variantChoices[key] === value
+        ) && variant.stock?.inStock
+      )
+    })
+  }
+
   return (
     <div className='flex flex-col gap-6'>
       {/* CHOOSE COLOR */}
