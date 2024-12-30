@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import {
   chooseColorBlue,
   chooseColorGreen,
@@ -22,12 +22,20 @@ const CustomizeProducts = ({
   variants: products.Variant[]
   productOptions: products.ProductOption[]
 }) => {
+  const [selectedOptions, setSelectedOptions] = useState<{
+    [key: string]: string
+  }>({})
+
+  const handleOptionSelect = (optionType: string, choice: string) => {
+    setSelectedOptions((prev) => ({ ...prev, [optionType]: choice }))
+  }
+
   return (
     <div className='flex flex-col gap-6'>
       {/* CHOOSE COLOR */}
       {productOptions.map((option) => (
         <div className='flex flex-col gap-4' key={option.name}>
-          <h4 className='font-medium'>{option.name}</h4>
+          <h4 className='font-medium'>Choose {option.name}</h4>
           {option.choices?.map((choice) => (
             <div className='' key={choice.value}>
               {choice.description}
