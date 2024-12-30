@@ -45,6 +45,8 @@ const CustomizeProducts = ({
     })
   }
 
+  console.log(selectedOptions)
+
   return (
     <div className='flex flex-col gap-6'>
       {/* CHOOSE COLOR */}
@@ -52,7 +54,13 @@ const CustomizeProducts = ({
         <div className='flex flex-col gap-4' key={option.name}>
           <h4 className='font-medium'>Choose {option.name}</h4>
           {option.choices?.map((choice) => (
-            <div className='' key={choice.value}>
+            <div
+              className=''
+              key={choice.value}
+              onClick={() =>
+                handleOptionSelect(option.name!, choice.description!)
+              }
+            >
               {choice.description}
             </div>
           ))}
