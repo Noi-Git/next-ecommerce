@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
 import { filterInput, filterSelect, filterSortBy } from './Styles/FilterStyle'
-import { useParams, useSearchParams, useRouter } from 'next/navigation'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 
 const Filter = () => {
-  const pathname = useParams()
+  const pathname = usePathname()
   const searchParams = useSearchParams()
   const { replace } = useRouter()
 
