@@ -13,6 +13,7 @@ import {
   unavailableColor,
 } from './Styles/CustomizeProductsStyle'
 import { products } from '@wix/stores'
+import Add from './Add'
 
 const CustomizeProducts = ({
   productId,
@@ -121,6 +122,8 @@ const CustomizeProducts = ({
           </ul>
         </div>
       ))}
+
+      <Add />
 
       {/* === COLOR === */}
       {/*
