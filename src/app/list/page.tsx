@@ -1,9 +1,18 @@
 import Filter from '@/components/Filter'
 import ProductList from '@/components/ProductList'
+import { wixClientServer } from '@/lib/wixClientServer'
+import { collections } from '@wix/stores'
 import Image from 'next/image'
-import React from 'react'
+import React, { Suspense } from 'react'
 
-const ListPage = () => {
+const ListPage = async ({ searchParams }: { searchParams: any }) => {
+  // console.log('---search params ---', searchParams)
+  const wixClient = await wixClientServer()
+  const cat = await wixClient.collections.getCollectionBySlug(
+    searchParams.cat || 'all-products'
+  )
+  // console.log('🚀 ~ ListPage ~ response:', cat)
+
   return (
     <div className='px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative'>
       {/* CAMPAIGN */}
@@ -25,7 +34,14 @@ const ListPage = () => {
       {/* PRODUCTS PAGE */}
       {/* This title will be dynamic -- it is just a placeholder for now */}
       <h1 className='mt-12 font-semibold text-xl'>Choose For You!</h1>
-      <ProductList />
+      <Suspense fallback={'Loading...'}>
+        <ProductList
+          categoryId={
+            cat.collection?._id || '00000000-000000-000000-000000000001'
+          }
+          searchParams={searchParams}
+        />
+      </Suspense>
     </div>
   )
 }
