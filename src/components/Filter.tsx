@@ -12,8 +12,11 @@ const Filter = () => {
     e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
   ) => {
     const { name, value } = e.target
-    console.log('🚀 ~ handleFilterChange ~ value:', value)
-    console.log('🚀 ~ handleFilterChange ~ name:', name)
+    const params = new URLSearchParams(searchPharams)
+    params.set(name, value)
+    replace(`${pathname}?${params.toString()}`)
+    // console.log('🚀 ~ handleFilterChange ~ value:', value)
+    // console.log('🚀 ~ handleFilterChange ~ name:', name)
   }
 
   return (
