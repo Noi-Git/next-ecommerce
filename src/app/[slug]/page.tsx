@@ -52,15 +52,16 @@ const SinglePage = async ({ params }: { params: { slug: string } }) => {
         )}
 
         <div className='h-[2px] bg-gray-100' />
-        {product._id && product.variants && product.productOptions && (
+        {product._id && product.variants && product.productOptions ? (
           <CustomizeProducts
             productId={product._id}
             variants={product.variants}
             productOptions={product.productOptions}
           />
+        ) : (
+          <Add />
         )}
 
-        <Add />
         <div className='h-[2px] bg-gray-100' />
         {product.additionalInfoSections?.map((section: any) => (
           <div className='text-sm' key={section.title}>
