@@ -5,14 +5,14 @@ import { useParams, useSearchParams, useRouter } from 'next/navigation'
 
 const Filter = () => {
   const pathname = useParams()
-  const searchPharams = useSearchParams()
+  const searchParams = useSearchParams()
   const { replace } = useRouter()
 
   const handleFilterChange = (
     e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
   ) => {
     const { name, value } = e.target
-    const params = new URLSearchParams(searchPharams)
+    const params = new URLSearchParams(searchParams)
     params.set(name, value)
     replace(`${pathname}?${params.toString()}`)
     // console.log('🚀 ~ handleFilterChange ~ value:', value)
@@ -65,10 +65,10 @@ const Filter = () => {
         onChange={handleFilterChange}
       >
         <option>Sort By</option>
-        <option value=''>Price (low to high)</option>
-        <option value=''>Price (high to low)</option>
-        <option value=''>Newest</option>
-        <option value=''>Oldest</option>
+        <option value='asc'>Price (low to high)</option>
+        <option value='desc'>Price (high to low)</option>
+        <option value='asc lastUpdated'>Newest</option>
+        <option value='desc lastUpdated'>Oldest</option>
       </select>
     </div>
   )
