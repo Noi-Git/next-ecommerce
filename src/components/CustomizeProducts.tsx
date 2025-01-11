@@ -27,6 +27,8 @@ const CustomizeProducts = ({
     [key: string]: string
   }>({})
 
+  const [selectedVariant, setSelectedVariant] = useState<products.Variant>()
+
   const handleOptionSelect = (optionType: string, choice: string) => {
     setSelectedOptions((prev) => ({ ...prev, [optionType]: choice }))
   }
