@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   chooseColor,
   chooseColorBlue,
@@ -28,6 +28,19 @@ const CustomizeProducts = ({
   }>({})
 
   const [selectedVariant, setSelectedVariant] = useState<products.Variant>()
+
+  //use useEffect hook to update selectedVariant when the selectedOption is choosed
+  useEffect(() => {
+    const variant = variants.find((v) => {
+      const variantChoices = v.choices
+
+      if (!variantChoices) return false
+      return Object.entries(selectedOptions).every(
+        ([key, value]) => variantChoices[key] === value
+      )
+    })
+    setSelectedVariant(variant)
+  }, [selectedOptions, variants])
 
   const handleOptionSelect = (optionType: string, choice: string) => {
     setSelectedOptions((prev) => ({ ...prev, [optionType]: choice }))
