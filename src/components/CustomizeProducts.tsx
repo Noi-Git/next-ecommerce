@@ -31,7 +31,7 @@ const CustomizeProducts = ({
     setSelectedOptions((prev) => ({ ...prev, [optionType]: choice }))
   }
 
-  console.log(variants)
+  // console.log('🚀 ~ variants ~' variants)
   // Check if the item exist in stock
   const isVariantInStock = (choices: { [key: string]: string }) => {
     return variants.some((variant) => {
@@ -48,9 +48,6 @@ const CustomizeProducts = ({
       )
     })
   }
-  console.log('🚀 ~ returnvariants.some ~ variants:', variants)
-
-  console.log(selectedOptions)
 
   return (
     <div className='flex flex-col gap-6'>
@@ -66,21 +63,44 @@ const CustomizeProducts = ({
               })
               const selected =
                 selectedOptions[option.name!] === choice.description
+              console.log('🚀 ~ option.name ~', option.name)
+              console.log('=== productOptions ===', productOptions)
+
+              const clickHandler = disabled
+                ? undefined
+                : () => handleOptionSelect(option.name!, choice.description!)
 
               return option.name === 'Color' ? (
                 <li
-                  key={option.name}
+                  key={choice.description}
                   className={chooseColor}
                   style={{
                     backgroundColor: choice.value,
                     cursor: disabled ? 'not-allowed' : 'pointer',
                   }}
+                  onClick={clickHandler}
                 >
                   {selected && <div className={selectedColor}></div>}
                   {disabled && <div className={unavailableColor}></div>}
                 </li>
               ) : (
-                <li className={sizeSmallButton}>{choice.description}</li>
+                <li
+                  className={sizeSmallButton}
+                  style={{
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                    backgroundColor: selected
+                      ? '#F35C7A'
+                      : disabled
+                      ? '#FBCFE9'
+                      : 'white',
+                    color: selected || disabled ? 'white' : '#F35C7A',
+                    boxShadow: disabled ? 'none' : '',
+                  }}
+                  key={choice.description}
+                  onClick={clickHandler}
+                >
+                  {choice.description}
+                </li>
               )
             })}
           </ul>

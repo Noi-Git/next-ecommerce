@@ -10,7 +10,7 @@ export const selectedColor =
 export const unavailableColor =
   'absolute w-10 h-[2px] bg-red-400 rotate-45 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
 export const sizeSmallButton =
-  'ring-1 ring-salmon-color text-salmon-color rounded-md py-1 px-4 text-sm cursor-pointer'
+  'ring-1 ring-salmon-color text-salmon-color rounded-md py-1 px-4 text-sm'
 export const sizeMediumButton =
   'ring-1 ring-salmon-color text-white bg-salmon-color rounded-md py-1 px-4 text-sm cursor-pointer'
 export const sizeLargeButton =
