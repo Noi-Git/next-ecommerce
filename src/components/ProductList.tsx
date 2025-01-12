@@ -36,7 +36,11 @@ const ProductList = async ({
     .gt('priceData.price', searchParams?.min || 0)
     .lt('priceData.price', searchParams?.max || 9999)
     .limit(limit || PRODUCT_PER_PAGE)
-  // .find()
+    .skip(
+      searchParams?.page
+        ? parseInt(searchParams?.page) * (limit || PRODUCT_PER_PAGE)
+        : 0
+    )
 
   if (searchParams?.sort) {
     const [sortType, sortBy] = searchParams.sort?.split(' ')
