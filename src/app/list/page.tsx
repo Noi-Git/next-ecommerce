@@ -33,7 +33,9 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
       <Filter />
       {/* PRODUCTS PAGE */}
       {/* This title will be dynamic -- it is just a placeholder for now */}
-      <h1 className='mt-12 font-semibold text-xl'>Choose For You!</h1>
+      <h1 className='mt-12 font-semibold text-xl'>
+        {cat?.collection?.name} For You!
+      </h1>
       <Suspense fallback={'Loading...'}>
         <ProductList
           categoryId={
