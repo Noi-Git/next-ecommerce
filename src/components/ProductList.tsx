@@ -14,7 +14,7 @@ import { products } from '@wix/stores'
 import DOMPurify from 'isomorphic-dompurify'
 import Pagination from './Pagination'
 
-const PRODUCT_PER_PAGE = 20
+const PRODUCT_PER_PAGE = 1
 
 const ProductList = async ({
   categoryId,
@@ -52,6 +52,7 @@ const ProductList = async ({
 
   //.find() send a promise
   const res = await productQuery.find()
+  console.log('🚀 ~ res:', res)
 
   return (
     <div className={featuredProductsContainer}>
@@ -99,7 +100,11 @@ const ProductList = async ({
           <button className={featuredProductsButton}>Add to Cart</button>
         </Link>
       ))}
-      <Pagination />
+      <Pagination
+        currentPage={res.currentPage || 0}
+        hasPrev={res.hasPrev()}
+        hasNext={res.hasNext()}
+      />
     </div>
   )
 }
