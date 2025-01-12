@@ -27,10 +27,18 @@ const Pagination = ({
 
   return (
     <div className='mt-12 flex justify-between w-full'>
-      <button className={paginationPrevButton} disabled={!hasPrev}>
+      <button
+        className={paginationPrevButton}
+        disabled={!hasPrev}
+        onClick={() => createPageUrl(currentPage - 1)}
+      >
         Previous
       </button>
-      <button className={paginationNextButton} disabled={!hasNext}>
+      <button
+        className={paginationNextButton}
+        disabled={!hasNext}
+        onClick={() => createPageUrl(currentPage + 1)}
+      >
         Next
       </button>
     </div>
