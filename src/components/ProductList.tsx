@@ -25,24 +25,9 @@ const ProductList = async ({
   searchParams?: any
 }) => {
   const wixClient = await wixClientServer()
-  /*
-  // add limit for the Feature Product - if no limit shows 20 - the limit comes from parent component
-  const res = await wixClient.products
-    .queryProducts()
-    .limit(limit || 20)
-    .find()
-    */
-  // const res = await wixClient.products
-  //   .queryProducts()
-  //   .startsWith('name', searchParams?.name || '')
-  //   .eq('collectionIds', categoryId)
-  //   .hasSome('productType', [searchParams?.type || 'physical', 'digital'])
-  //   .gt('priceData.price', searchParams?.min || 0)
-  //   .lt('priceData.price', searchParams?.max || 9999)
-  //   .limit(limit || PRODUCT_PER_PAGE)
-  //   .find()
-  // console.log(res.items[0])
-  const productQuery = await wixClient.products
+
+  // this are filters
+  const productQuery = wixClient.products
     .queryProducts()
     .startsWith('name', searchParams?.name || '')
     .eq('collectionIds', categoryId)
@@ -53,7 +38,7 @@ const ProductList = async ({
   // .find()
 
   if (searchParams?.sort) {
-    const [sortType, sortBy] = searchParams.sort.split('')
+    const [sortType, sortBy] = searchParams.sort.split(' ')
 
     if (sortType === 'asc') {
       productQuery.ascending(sortBy)
@@ -62,6 +47,8 @@ const ProductList = async ({
       productQuery.descending(sortBy)
     }
   }
+
+  //.find() send a promise
   const res = await productQuery.find()
 
   return (
