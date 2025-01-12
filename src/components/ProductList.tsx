@@ -12,6 +12,7 @@ import {
 import { wixClientServer } from '@/lib/wixClientServer'
 import { products } from '@wix/stores'
 import DOMPurify from 'isomorphic-dompurify'
+import Pagination from './Pagination'
 
 const PRODUCT_PER_PAGE = 20
 
@@ -98,6 +99,7 @@ const ProductList = async ({
           <button className={featuredProductsButton}>Add to Cart</button>
         </Link>
       ))}
+      <Pagination />
     </div>
   )
 }
