@@ -32,7 +32,17 @@ const ProductList = async ({
     .limit(limit || 20)
     .find()
     */
-  const res = await wixClient.products
+  // const res = await wixClient.products
+  //   .queryProducts()
+  //   .startsWith('name', searchParams?.name || '')
+  //   .eq('collectionIds', categoryId)
+  //   .hasSome('productType', [searchParams?.type || 'physical', 'digital'])
+  //   .gt('priceData.price', searchParams?.min || 0)
+  //   .lt('priceData.price', searchParams?.max || 9999)
+  //   .limit(limit || PRODUCT_PER_PAGE)
+  //   .find()
+  // console.log(res.items[0])
+  const productQuery = await wixClient.products
     .queryProducts()
     .startsWith('name', searchParams?.name || '')
     .eq('collectionIds', categoryId)
@@ -40,9 +50,19 @@ const ProductList = async ({
     .gt('priceData.price', searchParams?.min || 0)
     .lt('priceData.price', searchParams?.max || 9999)
     .limit(limit || PRODUCT_PER_PAGE)
-    .find()
+  // .find()
 
-  // console.log(res.items[0])
+  if (searchParams?.sort) {
+    const [sortType, sortBy] = searchParams.sort.split('')
+
+    if (sortType === 'asc') {
+      productQuery.ascending(sortBy)
+    }
+    if (sortType === 'desc') {
+      productQuery.descending(sortBy)
+    }
+  }
+  const res = await productQuery.find()
 
   return (
     <div className={featuredProductsContainer}>
