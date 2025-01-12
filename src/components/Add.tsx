@@ -48,11 +48,15 @@ const Add = ({
             </button>
           </div>
           {/* SELECT QUANTITY TEXT */}
-          <div className='text-xs'>
-            Only <span className='text-orange-500'>{stockNumber} items</span>{' '}
-            left! <br />
-            {"Don't"} miss it
-          </div>
+          {stockNumber < 1 ? (
+            <div className='text-xs'>Product is out of stock!</div>
+          ) : (
+            <div className='text-xs'>
+              Only <span className='text-orange-500'>{stockNumber} items</span>{' '}
+              left! <br />
+              {"Don't"} miss it
+            </div>
+          )}
         </div>
         <button className={addToCartButton}>Add to Cart</button>
       </div>
