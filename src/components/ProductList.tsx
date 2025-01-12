@@ -37,6 +37,8 @@ const ProductList = async ({
     .startsWith('name', searchParams?.name || '')
     .eq('collectionIds', categoryId)
     .hasSome('productType', [searchParams?.type || 'physical', 'digital'])
+    .gt('priceData.price', searchParams?.min || 0)
+    .lt('priceData.price', searchParams?.max || 9999)
     .limit(limit || PRODUCT_PER_PAGE)
     .find()
 
